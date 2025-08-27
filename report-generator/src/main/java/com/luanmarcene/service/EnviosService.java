@@ -19,7 +19,10 @@ public class EnviosService {
         String dataFinal = LocalDate.parse(dataAtual).minusDays(1).format(formatter);
 
         EnviosDAO enviosDao = new EnviosDAO();
-        List<Envio> envios = enviosDao.getEnviosByDate(dataInicial, dataFinal);
+        // List<Envio> envios = enviosDao.getEnviosByDate(dataInicial, dataFinal);
+        // List<Envio> envios = enviosDao.getEnviosComErroByDate(dataInicial,
+        // dataFinal);
+        List<Envio> envios = enviosDao.getErrosComDescricaoByDate(dataInicial, dataFinal);
 
         return envios;
     }
