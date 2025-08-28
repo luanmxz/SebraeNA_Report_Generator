@@ -59,8 +59,13 @@ public class EnviosDAO {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                String dataEnvio = rs.getString("data_envio");
                 Integer codTipo = rs.getInt("cod_tipo");
+
+                if (codTipo.equals(12))
+                    continue;
+
+                String dataEnvio = rs.getString("data_envio");
+
                 String tipoEnvio = rs.getString("tpdocidatendente");
                 Integer totalEnvios = rs.getInt("total");
 
@@ -126,8 +131,13 @@ public class EnviosDAO {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                String dataEnvio = rs.getString("data_envio");
                 Integer codTipo = rs.getInt("cod_tipo");
+
+                if (codTipo.equals(12))
+                    continue;
+
+                String dataEnvio = rs.getString("data_envio");
+
                 String tipoEnvio = rs.getString("tpdocidatendente");
                 Integer totalEnvios = rs.getInt("total");
 
@@ -200,8 +210,13 @@ public class EnviosDAO {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                String dataEnvio = rs.getString("data_envio");
                 Integer codTipo = rs.getInt("cod_tipo");
+
+                if (codTipo.equals(12))
+                    continue;
+
+                String dataEnvio = rs.getString("data_envio");
+
                 String tipoEnvio = rs.getString("tpdocidatendente");
                 Integer totalEnvios = rs.getInt("total");
                 String descricaoErro = rs.getString("erro_desc");
