@@ -8,10 +8,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
+
 import com.luanmarcene.model.Envio;
 import com.luanmarcene.model.ErroEeAluno;
 import com.luanmarcene.model.ErroEeParticipante;
 import com.luanmarcene.model.ErroEeProf;
+import com.luanmarcene.service.EmailService;
 import com.luanmarcene.service.EnviosService;
 import com.luanmarcene.service.ExcelService;
 
@@ -37,5 +39,8 @@ public class Main {
                 (List<ErroEeAluno>) listasEnviosErros.get("Erros EE Aluno"),
                 (List<ErroEeParticipante>) listasEnviosErros.get("Erros EE Participante"),
                 dataInicial, dataFinal);
+
+        EmailService emailService = new EmailService();
+        emailService.sendReportEmail();
     }
 }

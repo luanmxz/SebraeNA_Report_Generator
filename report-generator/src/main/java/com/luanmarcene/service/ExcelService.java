@@ -462,12 +462,13 @@ public class ExcelService {
         Workbook workbook = createOrGetWorkbook();
 
         File currDir = new File(".");
-        String path = currDir.getAbsolutePath();
+        String absPath = currDir.getAbsolutePath();
+        String path = absPath.substring(0, absPath.length() - 1).concat("report-generator\\out");
 
         String fileName = String.format("Diario de Bordo - EnviosSAS-SebraeNA de %s ate %s.xlsx", dataInicial,
                 dataFinal);
 
-        String fileLocation = path.substring(0, path.length() - 1) + fileName;
+        String fileLocation = path + "\\" + fileName;
 
         FileOutputStream outputStream = new FileOutputStream(fileLocation);
         workbook.write(outputStream);
